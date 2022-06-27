@@ -1,0 +1,49 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/category/index",
+    "pages/center/index",
+    "mouse/index"
+  ],
+  "subPackages": [],
+  "window": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "前端答题",
+    "navigationBarBackgroundColor": "#F8F8F8",
+    "backgroundColor": "#F8F8F8"
+  },
+  "tabBar": {
+    "color": "#333",
+    "backgroundColor": "#fff",
+    "selectedColor": "#ea4451",
+    "list": [
+      {
+        "text": "首页",
+        "pagePath": "pages/index/index",
+        "iconPath": "static/static/tabs/icon_home@3x.png",
+        "selectedIconPath": "static/static/tabs/icon_home_active@3x.png"
+      },
+      {
+        "text": "练习",
+        "pagePath": "pages/category/index",
+        "iconPath": "static/static/tabs/icon_category@3x.png",
+        "selectedIconPath": "static/static/tabs/icon_category_active@3x.png"
+      },
+      {
+        "text": "班级",
+        "pagePath": "pages/center/index",
+        "iconPath": "static/static/tabs/icon_user@3x.png",
+        "selectedIconPath": "static/static/tabs/icon_user_active@3x.png"
+      }
+    ]
+  },
+  "usingComponents": {
+    "van-button": "./wxcomponents/@vant/weapp/button/index",
+    "van-row": "./wxcomponents/@vant/weapp/row/index",
+    "van-col": "./wxcomponents/@vant/weapp/col/index",
+    "van-icon": "./wxcomponents/@vant/weapp/icon/index",
+    "van-overlay": "./wxcomponents/@vant/weapp/overlay/index",
+    "van-tab": "./wxcomponents/@vant/weapp/tab/index",
+    "van-tabs": "./wxcomponents/@vant/weapp/tabs/index"
+  }
+}

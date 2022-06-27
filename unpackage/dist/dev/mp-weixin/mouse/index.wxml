@@ -1,0 +1,1 @@
+<view><view class="top"><text>箭头</text><text>{{tiem}}</text></view><view class="test"><view class="num">16-<text class="answer"></text>=7</view><view class="info">十几减9</view></view><view class="number"><view class="left"></view><view class="right"><view></view><view></view></view></view></view>
