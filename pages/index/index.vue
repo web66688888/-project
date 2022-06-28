@@ -1,100 +1,28 @@
 <template>
 	<view>
-		<view class="top">
-			<view class="left">
-				<image class="avata" src="https://fly-1312367974.cos.ap-nanjing.myqcloud.com/11.png"></image>
-				<view class="info">
-					<view>微信用户</view>
-					<view class="classname" @click="onClickShow">{{ showname }}</view>
-					<van-overlay :show="show">
-						<view class="wrapper">
-							<view class="block" catch:tap="noop">
-								<view class="tt">
-									<text class="set" @click="classname = '暂不设置'">暂不设置</text>
-									<text class="chooseclass">选择年级</text>
-								</view>
-								<view class="classbody">
-									<view class="tp">
-										<text :class="classname === '一年级' ? 'active' : ''" @click="close('一')">
-											一年级
-										</text>
-										<text :class="classname === '二年级' ? 'active' : ''" @click="close('二')">
-											二年级
-										</text>
-										<text :class="classname === '三年级' ? 'active' : ''" @click="close('三')">
-											三年级
-										</text>
-									</view>
-									<view class="botm">
-										<text :class="classname === '四年级' ? 'active' : ''" @click="close('四')">
-											四年级
-										</text>
-										<text :class="classname === '五年级' ? 'active' : ''" @click="close('五')">
-											五年级
-										</text>
-										<text :class="classname === '六年级' ? 'active' : ''" @click="close('六')">
-											六年级
-										</text>
-									</view>
-								</view>
-								<view class="cel">
-									<van-button type="info" round size="large" @click="hiden">确定</van-button>
-								</view>
-							</view>
-						</view>
-					</van-overlay>
-				</view>
-			</view>
-			<view class="right">
-				<view class="history">
-					<uni-icons type="settings" size="30" color="blue"></uni-icons>
-					<text>历史记录</text>
-				</view>
-
-				<view class="fankui">
-					<uni-icons type="mail-open-filled" size="30" color="red"></uni-icons>
-					<text>反馈</text>
-				</view>
-			</view>
-		</view>
+		<Main></Main>
 		<view class="cotent">
 			<view class="text">作业检查</view>
 			<image src="../../static/logo.png" class="pic" @click="openCamera"></image>
-			<camera mode="normal" :flash="Istrue"></camera>
-			<view class="friends">推荐给好友</view>
+			<!-- <camera mode="normal" :flash="Istrue"></camera> -->
+			<button class="friends" open-type="share">推荐朋友</button>
 		</view>
 	</view>
 </template>
 
 <script>
+import Main from '@/components/main.vue';
 import { mapState } from 'vuex';
 export default {
+	components: {
+		Main
+	},
 	data() {
-		return {
-			showname: '暂不设置',
-			Istrue: 'off',
-			classname: '一年级',
-			show: false
-		};
+		return {};
 	},
 	onLoad() {},
-	computed: {
-		...mapState(['msg'])
-	},
-	methods: {
-		close(data) {
-			this.classname = data + '年级';
-		},
-		onClickShow() {
-			uni.hideTabBar();
-			this.show = true;
-		},
-		hiden() {
-			uni.showTabBar();
-			this.show = false;
-			this.showname = this.classname;
-		}
-	}
+	computed: {},
+	methods: {}
 };
 </script>
 
@@ -214,10 +142,15 @@ export default {
 	margin-top: 300rpx;
 	position: relative;
 	.friends {
+		border: 0;
 		bottom: -600rpx;
+		border-radius: 50rpx;
 		left: 72%;
 		transform: translateX(-250rpx);
 		position: absolute;
+		&::after {
+			border: 0;
+		}
 	}
 	.text {
 		bottom: -400rpx;

@@ -44,6 +44,7 @@
     "van-icon": "./wxcomponents/@vant/weapp/icon/index",
     "van-overlay": "./wxcomponents/@vant/weapp/overlay/index",
     "van-tab": "./wxcomponents/@vant/weapp/tab/index",
-    "van-tabs": "./wxcomponents/@vant/weapp/tabs/index"
+    "van-tabs": "./wxcomponents/@vant/weapp/tabs/index",
+    "van-share-sheet": "./wxcomponents/@vant/weapp/share-sheet/index"
   }
 }

@@ -138,11 +138,16 @@
   position: relative;
 }
 .cotent .friends.data-v-57280228 {
+  border: 0;
   bottom: -600rpx;
+  border-radius: 50rpx;
   left: 72%;
   -webkit-transform: translateX(-250rpx);
           transform: translateX(-250rpx);
   position: absolute;
+}
+.cotent .friends.data-v-57280228::after {
+  border: 0;
 }
 .cotent .text.data-v-57280228 {
   bottom: -400rpx;

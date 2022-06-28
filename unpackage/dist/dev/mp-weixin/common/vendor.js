@@ -2714,15 +2714,18 @@ var $http = new Request();exports.$http = $http;
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;
 var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 4));
-var _vuex = _interopRequireDefault(__webpack_require__(/*! vuex */ 15));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };} // store/store.js
-
+var _vuex = _interopRequireDefault(__webpack_require__(/*! vuex */ 15));
+var _class = _interopRequireDefault(__webpack_require__(/*! ./class */ 16));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };} // store/store.js
 // 安装 Vuex
 _vue.default.use(_vuex.default);
 
 // 创建 store 
 var store = new _vuex.default.Store({
   state: {
-    msg: 'vuex 成功运行...' } });var _default =
+    msg: 'vuex 成功运行...' },
+
+  modules: {
+    Class: _class.default } });var _default =
 
 
 store;exports.default = _default;
@@ -3983,6 +3986,28 @@ var index_cjs = {
 module.exports = index_cjs;
 
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../../../../webpack/buildin/global.js */ 2)))
+
+/***/ }),
+
+/***/ 16:
+/*!*****************************************!*\
+  !*** G:/黑马/小程序/第三天/前端答题/store/class.js ***!
+  \*****************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = {
+  namespaced: true,
+  state: function state() {
+    return {
+      classname: '暂不设置' };
+
+  },
+  mutations: {
+    changeclassname: function changeclassname(state, name) {
+      state.classname = name;
+    } } };exports.default = _default;
 
 /***/ }),
 
@@ -10531,7 +10556,18 @@ internalMixin(Vue);
 
 /***/ }),
 
-/***/ 49:
+/***/ 5:
+/*!*************************************!*\
+  !*** G:/黑马/小程序/第三天/前端答题/pages.json ***!
+  \*************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+
+
+/***/ }),
+
+/***/ 59:
 /*!******************************************************************************!*\
   !*** G:/黑马/小程序/第三天/前端答题/uni_modules/uni-icons/components/uni-icons/icons.js ***!
   \******************************************************************************/
@@ -11705,17 +11741,6 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
     "font_class": "cart",
     "unicode": "e631",
     "unicode_decimal": 58929 }] };exports.default = _default;
-
-/***/ }),
-
-/***/ 5:
-/*!*************************************!*\
-  !*** G:/黑马/小程序/第三天/前端答题/pages.json ***!
-  \*************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-
 
 /***/ })
 

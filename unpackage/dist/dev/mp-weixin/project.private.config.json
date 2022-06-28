@@ -20,6 +20,13 @@
           "query": "",
           "launchMode": "default",
           "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "mouse/index",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
         }
       ]
     }

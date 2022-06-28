@@ -5,34 +5,34 @@
 				<image class="avata" src="https://fly-1312367974.cos.ap-nanjing.myqcloud.com/11.png"></image>
 				<view class="info">
 					<view>微信用户</view>
-					<view class="classname" @click="onClickShow">{{ showname }}</view>
+					<view class="classname" @click="onClickShow">{{ classname }}</view>
 					<van-overlay :show="show">
 						<view class="wrapper">
 							<view class="block" catch:tap="noop">
 								<view class="tt">
-									<text class="set" @click="classname = '暂不设置'">暂不设置</text>
+									<text class="set" @click="classname1 = '暂不设置'">暂不设置</text>
 									<text class="chooseclass">选择年级</text>
 								</view>
 								<view class="classbody">
 									<view class="tp">
-										<text :class="classname === '一年级' ? 'active' : ''" @click="close('一')">
+										<text :class="classname1 === '一年级' ? 'active' : ''" @click="close('一')">
 											一年级
 										</text>
-										<text :class="classname === '二年级' ? 'active' : ''" @click="close('二')">
+										<text :class="classname1 === '二年级' ? 'active' : ''" @click="close('二')">
 											二年级
 										</text>
-										<text :class="classname === '三年级' ? 'active' : ''" @click="close('三')">
+										<text :class="classname1 === '三年级' ? 'active' : ''" @click="close('三')">
 											三年级
 										</text>
 									</view>
 									<view class="botm">
-										<text :class="classname === '四年级' ? 'active' : ''" @click="close('四')">
+										<text :class="classname1 === '四年级' ? 'active' : ''" @click="close('四')">
 											四年级
 										</text>
-										<text :class="classname === '五年级' ? 'active' : ''" @click="close('五')">
+										<text :class="classname1 === '五年级' ? 'active' : ''" @click="close('五')">
 											五年级
 										</text>
-										<text :class="classname === '六年级' ? 'active' : ''" @click="close('六')">
+										<text :class="classname1 === '六年级' ? 'active' : ''" @click="close('六')">
 											六年级
 										</text>
 									</view>
@@ -65,26 +65,27 @@ import { mapState } from 'vuex';
 export default {
 	data() {
 		return {
-			showname: '暂不设置',
 			Istrue: 'off',
-			classname: '一年级',
+			classname1: '一年级',
 			show: false
 		};
 	},
 	onLoad() {},
 	computed: {
-		...mapState(['msg'])
+		...mapState('Class', ['classname'])
 	},
 	methods: {
 		close(data) {
-			this.classname = data + '年级';
+			this.classname1 = data + '年级';
 		},
 		onClickShow() {
+			uni.hideTabBar();
 			this.show = true;
 		},
 		hiden() {
+			uni.showTabBar();
 			this.show = false;
-			this.showname = this.classname;
+			this.$store.commit('Class/changeclassname', this.classname1);
 		}
 	}
 };
@@ -95,7 +96,7 @@ export default {
 	position: relative;
 	display: flex;
 	height: 100%;
-	z-index: 3;
+	z-index: 99;
 }
 
 .block {
@@ -112,7 +113,7 @@ export default {
 	width: 100%;
 	height: 40%;
 	background-color: #fff;
-	z-index: 3;
+	z-index: 99;
 	.classbody {
 		display: flex;
 		flex-direction: column;
@@ -200,31 +201,6 @@ export default {
 			height: 100rpx;
 			border-radius: 50%;
 		}
-	}
-}
-.cotent {
-	margin-top: 300rpx;
-	position: relative;
-	.friends {
-		bottom: -600rpx;
-		left: 72%;
-		transform: translateX(-250rpx);
-		position: absolute;
-	}
-	.text {
-		bottom: -400rpx;
-		left: 72%;
-		transform: translateX(-250rpx);
-		position: absolute;
-		// z-index: 2;
-	}
-	.pic {
-		left: 50%;
-		transform: translateX(-250rpx);
-		position: absolute;
-		width: 500rpx;
-		height: 500rpx;
-		border-radius: 50%;
 	}
 }
 </style>
